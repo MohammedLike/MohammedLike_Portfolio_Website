@@ -26,7 +26,7 @@ export default function Hero() {
         >
           <div className="h-px w-10 bg-blue-500/40" />
           <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-gray-500">
-            Quantitative Research & Financial Data Science
+            Data Science · Quantitative Analysis · Financial Engineering
           </p>
           <div className="h-px w-10 bg-blue-500/40" />
         </motion.div>
@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.8 }}
           className="mx-auto max-w-lg text-base leading-relaxed text-gray-500 md:text-lg"
         >
-          Derivatives Pricing · Credit Risk Modeling · Machine Learning
+          ML Pipelines · Financial Risk Models · Full-Stack Analytics
         </motion.p>
 
         {/* CTA buttons */}

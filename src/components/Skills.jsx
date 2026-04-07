@@ -8,10 +8,10 @@ const skillCategories = [
     skills: [
       'Options Pricing (Black-Scholes, Monte Carlo)',
       'Credit Risk (PD/LGD/EAD, Vasicek ASRF)',
-      'Time-Series Momentum (TSMOM)',
       'Factor Models (Fama-French)',
       'Time-Series (ARIMA, GARCH, STL)',
       'Stochastic Modeling',
+      'Regression & Classification',
       'Portfolio Optimization',
     ],
   },
@@ -19,12 +19,11 @@ const skillCategories = [
     title: 'Programming & Tools',
     icon: '</>',
     skills: [
-      'Python (NumPy, pandas, scikit-learn, SciPy)',
-      'XGBoost · Statsmodels · ReportLab',
-      'Streamlit · yfinance',
+      'Python (NumPy, pandas, scikit-learn, Statsmodels, SciPy)',
+      'XGBoost · Streamlit · Flask · FastAPI',
       'SQL · Power BI',
-      'Git · LaTeX',
-      'Matplotlib · Plotly',
+      'Git · LaTeX · ReportLab',
+      'Next.js',
     ],
   },
   {
@@ -34,10 +33,19 @@ const skillCategories = [
       'Derivatives Analytics',
       'Risk Modeling (VaR, CVaR)',
       'Asset Pricing (CAPM, Factor Models)',
-      'Credit Scoring & Backtesting',
+      'Backtesting & Credit Scoring',
       'Regulatory Capital (Basel III)',
       'Implied Volatility Surfaces',
-      'Momentum & Trend-Following',
+    ],
+  },
+  {
+    title: 'Soft Skills',
+    icon: '◈',
+    skills: [
+      'Technical Communication',
+      'Research Synthesis',
+      'Cross-Functional Collaboration',
+      'Independent Project Delivery',
     ],
   },
 ]
@@ -64,7 +72,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {skillCategories.map((cat, ci) => (
             <motion.div
               key={ci}

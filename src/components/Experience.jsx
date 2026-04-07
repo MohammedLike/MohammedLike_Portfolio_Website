@@ -7,8 +7,8 @@ const experiences = [
     company: 'Visual Solutions Pvt Ltd',
     period: 'May 2025 — Sep 2026',
     details: [
-      'Built a sectoral fund-flow analysis model in Python using 3-year historical CMIE/MCA dataset; surfaced 4 high-conviction capital allocation shifts, reducing manual research time by ~40%.',
-      'Produced an investment trend report using time-series decomposition on sector-level NAV data; identified 3 cyclical regime shifts with 87% directional accuracy vs BSE sectoral indices.',
+      'Built a sectoral fund-flow analysis model in Python on a 3-year CMIE/MCA dataset; surfaced 4 high-conviction capital allocation shifts and reduced manual research time by 40%.',
+      'Produced an investment trend report using STL time-series decomposition on sector-level NAV data; identified 3 cyclical regime shifts with 87% directional accuracy vs. BSE sectoral indices.',
     ],
   },
   {
@@ -16,8 +16,9 @@ const experiences = [
     company: 'Dreamteam Technologies',
     period: 'May 2024 — Jun 2024',
     details: [
-      'Engineered an NLP intent classifier (fine-tuned BERT) achieving 89% classification accuracy; reduced average analyst query-routing time by 30% across 10,000+ monthly interactions.',
-      'Applied sentiment analysis pipeline (VADER + logistic regression) on customer feedback corpus; improved intent accuracy by 12% over baseline rule-based system.',
+      'Designed and deployed an NLP-powered chatbot for a school edtech platform to automate student data management and streamline user query handling.',
+      'Implemented backend workflows integrating NLP-based query parsing, improving speed of academic information retrieval for end users.',
+      'Collaborated in a cross-functional team to scope requirements, iterate on model outputs, and deliver a production-ready solution within the internship timeline.',
     ],
   },
 ]

@@ -58,7 +58,7 @@ export default function Resume() {
             </p>
           </div>
           <div className="stat-card">
-            <p className="text-3xl font-bold text-gray-900 md:text-4xl">4+</p>
+            <p className="text-3xl font-bold text-gray-900 md:text-4xl">3</p>
             <p className="mt-2 text-sm text-gray-600">
               Quantitative Projects Delivered
             </p>

@@ -5,50 +5,41 @@ const projects = [
   {
     title: 'Black-Scholes Options Pricing Engine',
     description:
-      'Full-stack options pricing platform with Black-Scholes closed-form solver, 10,000-path Monte Carlo validator, and Newton-Raphson implied volatility solver. Features real-time Greeks computation, 3D volatility surface visualization, and automated PDF risk reports.',
-    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance', 'NumPy'],
+      'Implemented a Black-Scholes closed-form solver alongside a 10,000-path Monte Carlo validator. Computed a full Greeks portfolio (Delta, Gamma, Vega, Theta, Rho) with real-time implied volatility surface calibration using a Newton-Raphson solver, validated against live options data. Deployed an interactive Streamlit dashboard featuring 3D volatility surface visualization, scenario P&L analysis, and automated PDF risk summary generation.',
+    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance'],
     highlights: [
-      '<0.3% pricing error across 500 NIFTY option contracts',
-      'Full Greeks portfolio with real-time IV surface calibration',
+      '<0.3% pricing error vs theoretical benchmark across 500 NIFTY option contracts',
+      'Full Greeks portfolio with real-time IV surface calibration via Newton-Raphson',
+      '3D volatility surface visualization & automated PDF risk reports',
     ],
     liveUrl: 'https://black-scholes-option-pricing-model-9hkxyhodzn7nfbfcuhxckc.streamlit.app/',
     repo: 'https://github.com/MohammedLike/Black-Scholes-Option-Pricing-Model',
   },
   {
-    title: 'Credit Risk Modeling Framework',
+    title: 'Time-Series Momentum Quantitative Platform',
     description:
-      'End-to-end Basel III IRB-compliant PD/LGD/EAD estimation pipeline on 50,000 synthetic loan records. Built WoE-based credit scorecard with PDO scaling and stress-tested under multiple macro scenarios using Vasicek ASRF model.',
-    tech: ['XGBoost', 'Statsmodels', 'Python', 'ReportLab'],
+      'Built a full-stack quantitative trading system using FastAPI and Next.js to analyze multi-asset portfolios on 20+ years of market data. Implemented a time-series momentum strategy with multi-horizon signal construction and regime detection via Hidden Markov Models (HMM). Engineered a high-performance backtesting engine with volatility targeting, transaction cost modeling, and risk metrics including Sharpe ratio, VaR, and maximum drawdown.',
+    tech: ['FastAPI', 'Next.js', 'Python', 'HMM'],
     highlights: [
-      'ROC-AUC 0.91 · KS 0.63 · Gini 0.82',
-      'Credit scorecard (300–850) validated via PSI monitoring',
-    ],
-    liveUrl: '',
-    repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
-  },
-  {
-    title: 'TSMOM — Time-Series Momentum Strategy',
-    description:
-      'Implementation of the Moskowitz, Ooi & Pedersen (2012) TSMOM framework on multi-asset futures data. Signal engine computes 12-month excess returns with ex-ante volatility scaling (σ-target = 40%). Full backtest pipeline with transaction cost modeling and Newey-West t-statistics.',
-    tech: ['Python', 'NumPy', 'pandas', 'Statsmodels', 'Matplotlib'],
-    highlights: [
-      'Annualized Sharpe > 0.5 across all asset classes',
-      'Max drawdown reduced by ~35% via volatility scaling',
+      'Multi-asset portfolio analysis on 20+ years of market data',
+      'Regime detection via Hidden Markov Models with multi-horizon signals',
+      'AI-powered equity research report generator via LLM API integration',
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/TSMOM-Strategy',
   },
   {
-    title: 'Factor Model & Sector Rotation Analysis',
+    title: 'Credit Risk Modeling Framework',
     description:
-      'Fama-French 3-factor model on NSE sectoral index data (2018–2024), decomposing alpha, beta, SMB, and HML exposures across 11 sectors. STL time-series decomposition for cyclical pattern and structural break detection in FII/DII flow data.',
-    tech: ['Python', 'SQL', 'Power BI', 'Statsmodels'],
+      'Developed a Basel III IRB-compliant PD/LGD/EAD estimation pipeline on 50,000 synthetic loan records. Designed a WoE-based credit scorecard with PDO scaling (300–850 range); validated model stability via PSI monitoring and population drift analysis across 6 time windows. Stress-tested portfolio resilience under base, adverse, and severe macro scenarios using the Vasicek ASRF model. Generated automated PDF model-validation reports with ReportLab.',
+    tech: ['XGBoost', 'Statsmodels', 'ReportLab', 'Python'],
     highlights: [
-      '83% accuracy in trend-change detection',
-      'Factor decomposition across 11 NSE sectors',
+      'XGBoost PD model: ROC-AUC 0.91 · KS 0.63 · Gini 0.82',
+      'Credit scorecard (300–850) validated via PSI across 6 time windows',
+      'Stress-tested under base, adverse & severe scenarios via Vasicek ASRF',
     ],
     liveUrl: '',
-    repo: '',
+    repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
   },
 ]
 

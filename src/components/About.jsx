@@ -27,31 +27,32 @@ export default function About() {
           {/* Content */}
           <div className="md:col-span-9">
             <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
-              Quantitative Analyst with a precise focus on the intersection of
-              statistical rigor and financial theory.
+              Data Science student and Quantitative Analyst building
+              production-quality financial systems.
             </h2>
 
             <div className="mt-8 max-w-2xl space-y-5">
               <p className="text-base leading-relaxed text-gray-600">
-                Specializing in derivatives pricing through Black-Scholes and Monte
-                Carlo frameworks, credit risk modeling under Basel III IRB standards,
-                time-series momentum strategies, and sector-level investment analysis.
-                I build end-to-end Python pipelines that transform complex financial
-                data into actionable intelligence — from options analytics and
-                regulatory capital estimation to factor-based portfolio strategy.
+                Hands-on experience building end-to-end ML pipelines, financial
+                risk models, and full-stack analytics platforms. Proven ability
+                to translate financial theory into production-quality Python
+                systems — from time-series momentum (TSMOM) frameworks to
+                options pricing engines with live market data. Targeting junior
+                data science and quantitative analyst roles.
               </p>
               <p className="text-base leading-relaxed text-gray-600">
                 Currently completing a B.Tech in Computer Science &
                 Engineering (Data Science) at Jodhpur Institute of Engineering
-                and Technology, with coursework spanning Financial Engineering,
-                Machine Learning, Time Series Analysis, and Optimization.
+                and Technology, with coursework spanning Probability & Statistics,
+                Financial Engineering, Machine Learning, Time Series Analysis,
+                Optimization Techniques, and Data Mining.
               </p>
             </div>
 
             {/* Quick stats */}
             <div className="mt-12 grid grid-cols-3 gap-6">
               <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">4+</p>
+                <p className="text-3xl font-bold text-gray-900 md:text-4xl">3+</p>
                 <p className="mt-1 text-sm text-gray-500">Quant Projects</p>
               </div>
               <div className="stat-card">
