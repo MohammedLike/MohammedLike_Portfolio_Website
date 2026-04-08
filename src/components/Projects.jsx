@@ -16,6 +16,19 @@ const projects = [
     repo: 'https://github.com/MohammedLike/Black-Scholes-Option-Pricing-Model',
   },
   {
+    title: 'Market Decode — Indian Financial News Intelligence',
+    description:
+      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
+    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
+    highlights: [
+      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
+      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
+      '8-sector performance tracker with news-to-sector matching via keyword-based regex classification',
+    ],
+    liveUrl: 'https://financialmarketnews.netlify.app/',
+    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
+  },
+  {
     title: 'Time-Series Momentum Quantitative Platform',
     description:
       'Built a full-stack quantitative trading system using FastAPI and Next.js to analyze multi-asset portfolios on 20+ years of market data. Implemented a time-series momentum strategy with multi-horizon signal construction and regime detection via Hidden Markov Models (HMM). Engineered a high-performance backtesting engine with volatility targeting, transaction cost modeling, and risk metrics including Sharpe ratio, VaR, and maximum drawdown.',
@@ -26,7 +39,7 @@ const projects = [
       'AI-powered equity research report generator via LLM API integration',
     ],
     liveUrl: '',
-    repo: 'https://github.com/MohammedLike/TSMOM-Strategy',
+    repo: 'https://github.com/MohammedLike/Time-Series-Momentum-TSMOM-strategy-system',
   },
   {
     title: 'Credit Risk Modeling Framework',
@@ -41,19 +54,7 @@ const projects = [
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
   },
-  {
-    title: 'Market Decode — Indian Financial News Intelligence',
-    description:
-      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
-    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
-    highlights: [
-      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
-      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
-      '8-sector performance tracker with news-to-sector matching via keyword-based regex classification',
-    ],
-    liveUrl: '',
-    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
-  },
+
 ]
 
 function ProjectCard({ project, index }) {
@@ -128,7 +129,7 @@ function ProjectCard({ project, index }) {
             className="link-btn link-btn-secondary"
           >
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
             GitHub
           </a>

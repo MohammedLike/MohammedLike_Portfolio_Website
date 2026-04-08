@@ -38,16 +38,7 @@ const skillCategories = [
       'Implied Volatility Surfaces',
     ],
   },
-  {
-    title: 'Soft Skills',
-    icon: '◈',
-    skills: [
-      'Technical Communication',
-      'Research Synthesis',
-      'Cross-Functional Collaboration',
-      'Independent Project Delivery',
-    ],
-  },
+
 ]
 
 export default function Skills() {
