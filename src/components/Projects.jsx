@@ -3,6 +3,19 @@ import { useRef } from 'react'
 
 const projects = [
   {
+    title: 'Market Decode — Indian Financial News Intelligence',
+    description:
+      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
+    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
+    highlights: [
+      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
+      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
+    ],
+    liveUrl: 'https://financialmarketnews.netlify.app/',
+    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
+  },
+
+  {
     title: 'Black-Scholes Options Pricing Engine',
     description:
       'Implemented a Black-Scholes closed-form solver alongside a 10,000-path Monte Carlo validator. Computed a full Greeks portfolio (Delta, Gamma, Vega, Theta, Rho) with real-time implied volatility surface calibration using a Newton-Raphson solver, validated against live options data. Deployed an interactive Streamlit dashboard featuring 3D volatility surface visualization, scenario P&L analysis, and automated PDF risk summary generation.',
@@ -15,19 +28,7 @@ const projects = [
     liveUrl: 'https://black-scholes-option-pricing-model-9hkxyhodzn7nfbfcuhxckc.streamlit.app/',
     repo: 'https://github.com/MohammedLike/Black-Scholes-Option-Pricing-Model',
   },
-  {
-    title: 'Market Decode — Indian Financial News Intelligence',
-    description:
-      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
-    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
-    highlights: [
-      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
-      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
-      '8-sector performance tracker with news-to-sector matching via keyword-based regex classification',
-    ],
-    liveUrl: 'https://financialmarketnews.netlify.app/',
-    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
-  },
+
 
   {
     title: 'Interactive 3D Portfolio Website',
