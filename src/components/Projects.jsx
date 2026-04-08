@@ -28,6 +28,21 @@ const projects = [
     liveUrl: 'https://financialmarketnews.netlify.app/',
     repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
   },
+
+  {
+    title: 'Interactive 3D Portfolio Website',
+    description:
+      'Designed and developed a fully interactive, performance-optimized personal portfolio website featuring immersive 3D elements powered by Three.js and React Three Fiber. Built with React and Vite for blazing-fast load times, the site showcases a modern glassmorphism aesthetic with smooth scroll-driven animations via Framer Motion, a dynamic particle background, and a responsive layout across all devices.',
+    tech: ['React', 'Three.js', 'Framer Motion', 'Vite', 'CSS'],
+    highlights: [
+      'Immersive 3D hero scene with interactive orbital controls and dynamic lighting',
+      'Smooth scroll-triggered animations and micro-interactions via Framer Motion',
+      'Fully responsive design with glassmorphism UI and curated color palette',
+    ],
+    liveUrl: 'https://frolicking-pithivier-09922f.netlify.app/',
+    repo: 'https://github.com/MohammedLike/MohammedLike_Portfolio_Website',
+  },
+
   {
     title: 'Time-Series Momentum Quantitative Platform',
     description:
@@ -54,19 +69,7 @@ const projects = [
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
   },
-  {
-    title: 'Interactive 3D Portfolio Website',
-    description:
-      'Designed and developed a fully interactive, performance-optimized personal portfolio website featuring immersive 3D elements powered by Three.js and React Three Fiber. Built with React and Vite for blazing-fast load times, the site showcases a modern glassmorphism aesthetic with smooth scroll-driven animations via Framer Motion, a dynamic particle background, and a responsive layout across all devices.',
-    tech: ['React', 'Three.js', 'Framer Motion', 'Vite', 'CSS'],
-    highlights: [
-      'Immersive 3D hero scene with interactive orbital controls and dynamic lighting',
-      'Smooth scroll-triggered animations and micro-interactions via Framer Motion',
-      'Fully responsive design with glassmorphism UI and curated color palette',
-    ],
-    liveUrl: 'https://frolicking-pithivier-09922f.netlify.app/',
-    repo: 'https://github.com/MohammedLike/MohammedLike_Portfolio_Website',
-  },
+
 
 ]
 
