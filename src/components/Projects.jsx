@@ -11,7 +11,7 @@ const projects = [
       'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
       'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
     ],
-    liveUrl: 'https://financialmarketnews.netlify.app/',
+    liveUrl: 'https://indian-financial-news.vercel.app/',
     repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
   },
 
