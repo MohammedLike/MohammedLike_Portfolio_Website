@@ -3,7 +3,7 @@ import { useRef } from 'react'
 
 const experiences = [
   {
-    role: 'Quant Researcher and Developer Intern',
+    role: 'Quantitative Researcher and Developer Intern',
     company: 'StockWiz Technologies LLP',
     period: 'May 2026 — Present',
     details: [
