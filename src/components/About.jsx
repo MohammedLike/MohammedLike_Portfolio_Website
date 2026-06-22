@@ -27,36 +27,26 @@ export default function About() {
           {/* Content */}
           <div className="md:col-span-9">
             <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
-              Data Science student and Quantitative Analyst building
-              production-quality financial systems.
+              Quantitative Researcher and Developer building systematic trading systems.
             </h2>
 
             <div className="mt-8 max-w-2xl space-y-5">
               <p className="text-base leading-relaxed text-gray-600">
-                Hands-on experience building end-to-end ML pipelines, financial
-                risk models, and full-stack analytics platforms. Proven ability
-                to translate financial theory into production-quality Python
-                systems — from time-series momentum (TSMOM) frameworks to
-                options pricing engines with live market data. Targeting junior
-                data science and quantitative analyst roles.
+                Experienced in designing, backtesting, and deploying systematic trading strategies across equities, futures, and options. Skilled in translating discretionary trading theories (such as Smart Money Concepts) into rule-based algorithmic models, options pricing with Greeks analytics, and high-performance financial data engineering.
               </p>
               <p className="text-base leading-relaxed text-gray-600">
-                Currently completing a B.Tech in Computer Science &
-                Engineering (Data Science) at Jodhpur Institute of Engineering
-                and Technology, with coursework spanning Probability & Statistics,
-                Financial Engineering, Machine Learning, Time Series Analysis,
-                Optimization Techniques, and Data Mining.
+                Currently working as a Quant Researcher and Developer Intern at StockWiz Technologies LLP, while completing a B.Tech in Computer Science & Engineering (Data Science) at Jodhpur Institute of Engineering and Technology (JIET).
               </p>
             </div>
 
             {/* Quick stats */}
             <div className="mt-12 grid grid-cols-3 gap-6">
               <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">3+</p>
+                <p className="text-3xl font-bold text-gray-900 md:text-4xl">5</p>
                 <p className="mt-1 text-sm text-gray-500">Quant Projects</p>
               </div>
               <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">2</p>
+                <p className="text-3xl font-bold text-gray-900 md:text-4xl">3</p>
                 <p className="mt-1 text-sm text-gray-500">Internships</p>
               </div>
               <div className="stat-card">

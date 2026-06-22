@@ -3,56 +3,53 @@ import { useRef } from 'react'
 
 const projects = [
   {
-    title: 'Market Decode — Indian Financial News Intelligence',
+    title: 'RAG-LLM Backtesting Engine',
     description:
-      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
-    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
+      'Developed an AI-powered quantitative backtesting platform that converts natural language trading strategies into executable algorithmic workflows. Engineered a Retrieval-Augmented Generation (RAG) pipeline for strategy retrieval, parameter extraction, and financial knowledge parsing, backed by a vector database for semantic search.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Vector DB', 'LLMs', 'Backtesting'],
     highlights: [
-      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
-      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth',
+      'Converts discretionary/natural language trading rules into structured, executable code',
+      'RAG pipeline for strategy document retrieval, parameter extraction, and context-aware coding',
+      'Designed a scalable vector search architecture to support strategy automation and research'
     ],
-    liveUrl: 'https://indian-financial-news.vercel.app/',
-    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
+    liveUrl: '',
+    repo: 'https://github.com/MohammedLike/RAG_LLM_Backtesting-Engine',
   },
-
   {
-    title: 'Black-Scholes Options Pricing Engine',
+    title: 'Research Report Automation System',
     description:
-      'Implemented a Black-Scholes closed-form solver alongside a 10,000-path Monte Carlo validator. Computed a full Greeks portfolio (Delta, Gamma, Vega, Theta, Rho) with real-time implied volatility surface calibration using a Newton-Raphson solver, validated against live options data. Deployed an interactive Streamlit dashboard featuring 3D volatility surface visualization, scenario P&L analysis, and automated PDF risk summary generation.',
-    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance'],
+      'Built an end-to-end investment research automation platform that generates institutional-grade financial reports from multi-source structured and unstructured market data. Integrates news analysis, data ingestion pipelines, and PDF report generation workflows to automate investment research.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'NLP', 'ReportLab', 'ETL Pipelines'],
     highlights: [
-      '<0.3% pricing error vs theoretical benchmark across 500 NIFTY option contracts',
-      'Full Greeks portfolio with real-time IV surface calibration via Newton-Raphson',
-      '3D volatility surface visualization & automated PDF risk reports',
+      'Automated ingestion of market indices, news streams, and corporate filings into a PostgreSQL warehouse',
+      'NLP pipeline extracting sentiment scores, macro indicators, and corporate news insights',
+      'Generates stylized PDF reports with automated charts, statistics, and narrative synthesis'
+    ],
+    liveUrl: '',
+    repo: 'https://github.com/MohammedLike/Research-Report-Automation',
+  },
+  {
+    title: 'Black-Scholes Option Pricing Model',
+    description:
+      'Developed a production-grade option pricing and sensitivity system implementing the Black-Scholes framework for European options. Computes implied volatility surfaces and option Greeks (Delta, Gamma, Vega, Theta, Rho) with Monte Carlo pricing validation and interactive scenario analysis.',
+    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance', 'Quant Finance'],
+    highlights: [
+      'Computes full Greeks portfolio with real-time IV surface calibration via Newton-Raphson',
+      'Interactive Streamlit dashboard featuring 3D volatility surface charts and P&L simulations',
+      'Monte Carlo validation engine with 10,000+ simulated paths to verify pricing accuracy'
     ],
     liveUrl: 'https://black-scholes-option-pricing-model-9hkxyhodzn7nfbfcuhxckc.streamlit.app/',
     repo: 'https://github.com/MohammedLike/Black-Scholes-Option-Pricing-Model',
   },
-
-
-  {
-    title: 'Interactive 3D Portfolio Website',
-    description:
-      'Designed and developed a fully interactive, performance-optimized personal portfolio website featuring immersive 3D elements powered by Three.js and React Three Fiber. Built with React and Vite for blazing-fast load times, the site showcases a modern glassmorphism aesthetic with smooth scroll-driven animations via Framer Motion, a dynamic particle background, and a responsive layout across all devices.',
-    tech: ['React', 'Three.js', 'Framer Motion', 'Vite', 'CSS'],
-    highlights: [
-      'Immersive 3D hero scene with interactive orbital controls and dynamic lighting',
-      'Smooth scroll-triggered animations and micro-interactions via Framer Motion',
-      'Fully responsive design with glassmorphism UI and curated color palette',
-    ],
-    liveUrl: 'https://frolicking-pithivier-09922f.netlify.app/',
-    repo: 'https://github.com/MohammedLike/MohammedLike_Portfolio_Website',
-  },
-
   {
     title: 'Time-Series Momentum Quantitative Platform',
     description:
       'Built a full-stack quantitative trading system using FastAPI and Next.js to analyze multi-asset portfolios on 20+ years of market data. Implemented a time-series momentum strategy with multi-horizon signal construction and regime detection via Hidden Markov Models (HMM). Engineered a high-performance backtesting engine with volatility targeting, transaction cost modeling, and risk metrics including Sharpe ratio, VaR, and maximum drawdown.',
-    tech: ['FastAPI', 'Next.js', 'Python', 'HMM'],
+    tech: ['FastAPI', 'Next.js', 'Python', 'HMM', 'Pandas'],
     highlights: [
       'Multi-asset portfolio analysis on 20+ years of market data',
       'Regime detection via Hidden Markov Models with multi-horizon signals',
-      'AI-powered equity research report generator via LLM API integration',
+      'Advanced backtester with vol-targeting, transaction costs, and Sharpe optimization'
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Time-Series-Momentum-TSMOM-strategy-system',
@@ -61,17 +58,27 @@ const projects = [
     title: 'Credit Risk Modeling Framework',
     description:
       'Developed a Basel III IRB-compliant PD/LGD/EAD estimation pipeline on 50,000 synthetic loan records. Designed a WoE-based credit scorecard with PDO scaling (300–850 range); validated model stability via PSI monitoring and population drift analysis across 6 time windows. Stress-tested portfolio resilience under base, adverse, and severe macro scenarios using the Vasicek ASRF model. Generated automated PDF model-validation reports with ReportLab.',
-    tech: ['XGBoost', 'Statsmodels', 'ReportLab', 'Python'],
+    tech: ['XGBoost', 'Statsmodels', 'ReportLab', 'Python', 'Risk Modeling'],
     highlights: [
       'XGBoost PD model: ROC-AUC 0.91 · KS 0.63 · Gini 0.82',
       'Credit scorecard (300–850) validated via PSI across 6 time windows',
-      'Stress-tested under base, adverse & severe scenarios via Vasicek ASRF',
+      'Stress-tested under base, adverse & severe scenarios via Vasicek ASRF'
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
   },
-
-
+  {
+    title: 'Market Decode — Indian Financial News Intelligence',
+    description:
+      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
+    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
+    highlights: [
+      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
+      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth'
+    ],
+    liveUrl: 'https://indian-financial-news.vercel.app/',
+    repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
+  },
 ]
 
 function ProjectCard({ project, index }) {

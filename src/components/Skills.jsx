@@ -3,42 +3,52 @@ import { useRef } from 'react'
 
 const skillCategories = [
   {
-    title: 'Quantitative Methods',
+    title: 'Quantitative Research & Trading',
+    icon: 'α',
+    skills: [
+      'Systematic Trading & Backtesting (VectorBT, TA-Lib)',
+      'Alpha Research & Signal Generation',
+      'Smart Money Concepts (SMC) & Order Flow',
+      'Market Microstructure & Volatility Analysis',
+      'Portfolio Construction & Performance Analytics',
+      'Transaction Cost Modeling & Risk Management',
+    ],
+  },
+  {
+    title: 'Quantitative Methods & ML',
     icon: '∑',
     skills: [
-      'Options Pricing (Black-Scholes, Monte Carlo)',
-      'Credit Risk (PD/LGD/EAD, Vasicek ASRF)',
-      'Factor Models (Fama-French)',
-      'Time-Series (ARIMA, GARCH, STL)',
-      'Stochastic Modeling',
-      'Regression & Classification',
-      'Portfolio Optimization',
+      'Time Series Analysis & Statistical Modeling',
+      'Stochastic Processes & Monte Carlo Simulations',
+      'Machine Learning & Deep Learning (Scikit-Learn, PyTorch)',
+      'NLP & Retrieval-Augmented Generation (RAG) for Finance',
+      'Options Pricing Frameworks & Options Greeks',
+      'Regression & Optimization Techniques',
     ],
   },
   {
-    title: 'Programming & Tools',
+    title: 'Programming & Data Engineering',
     icon: '</>',
     skills: [
-      'Python (NumPy, pandas, scikit-learn, Statsmodels, SciPy)',
-      'XGBoost · Streamlit · Flask · FastAPI',
-      'SQL · Power BI',
-      'Git · LaTeX · ReportLab',
-      'Next.js',
+      'Python (NumPy, Pandas, Polars, SciPy, Statsmodels)',
+      'SQL & Databases (PostgreSQL, QuestDB, MongoDB)',
+      'Data Engineering Pipelines (ETL, PyArrow)',
+      'Streaming & Orchestration (Kafka, Apache Airflow)',
+      'Low-Level Foundations (C++ Basic)',
+      'Data Warehousing & Big Data (Hadoop)',
     ],
   },
   {
-    title: 'Finance & Risk',
-    icon: 'Δ',
+    title: 'Frameworks & Infrastructure',
+    icon: '⚙',
     skills: [
-      'Derivatives Analytics',
-      'Risk Modeling (VaR, CVaR)',
-      'Asset Pricing (CAPM, Factor Models)',
-      'Backtesting & Credit Scoring',
-      'Regulatory Capital (Basel III)',
-      'Implied Volatility Surfaces',
+      'FastAPI · Streamlit · Next.js',
+      'Docker · Linux · Git Version Control',
+      'Jupyter Notebooks for Exploratory Research',
+      'BI Tools & Dashboards (Power BI, Excel)',
+      'Financial Document Automation (ReportLab)',
     ],
   },
-
 ]
 
 export default function Skills() {

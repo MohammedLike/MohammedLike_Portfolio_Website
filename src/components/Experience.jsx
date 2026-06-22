@@ -3,22 +3,35 @@ import { useRef } from 'react'
 
 const experiences = [
   {
-    role: 'Data Analyst Intern',
-    company: 'Visual Solutions Pvt Ltd',
-    period: 'May 2025 — Sep 2026',
+    role: 'Quant Researcher and Developer Intern',
+    company: 'StockWiz Technologies LLP',
+    period: 'May 2026 — Present',
     details: [
-      'Built a sectoral fund-flow analysis model in Python on a 3-year CMIE/MCA dataset; surfaced 4 high-conviction capital allocation shifts and reduced manual research time by 40%.',
-      'Produced an investment trend report using STL time-series decomposition on sector-level NAV data; identified 3 cyclical regime shifts with 87% directional accuracy vs. BSE sectoral indices.',
+      'Researched and developed systematic trading strategies using historical market data and quantitative techniques.',
+      'Built Python-based backtesting and data analysis pipelines to evaluate strategy performance and risk metrics.',
+      'Conducted research on technical indicators, factor models, and options strategies for generating trading signals.',
+      'Automated financial data collection, preprocessing, and research workflows using Python and SQL.',
+      'Collaborated on developing scalable, data-driven solutions for quantitative research and strategy development.',
+    ],
+  },
+  {
+    role: 'Data Analyst Intern',
+    company: 'Visual Solutions Pvt. Ltd.',
+    period: 'May 2025 — Sep 2025',
+    details: [
+      'Developed an investment analysis model to identify funding and sectoral allocation patterns, improving analytical insights by 15%.',
+      'Produced investment trend reports using historical data analysis to support data-driven strategic decisions.',
+      'Designed data pipelines and dashboards for analyzing financial and business datasets.',
     ],
   },
   {
     role: 'AI/ML Intern',
     company: 'Dreamteam Technologies',
-    period: 'May 2024 — Jun 2024',
+    period: 'May 2024 — Jul 2024',
     details: [
-      'Designed and deployed an NLP-powered chatbot for a school edtech platform to automate student data management and streamline user query handling.',
-      'Implemented backend workflows integrating NLP-based query parsing, improving speed of academic information retrieval for end users.',
-      'Collaborated in a cross-functional team to scope requirements, iterate on model outputs, and deliver a production-ready solution within the internship timeline.',
+      'Designed and implemented an NLP-based chatbot, reducing average response time by 30%.',
+      'Applied sentiment analysis and machine learning techniques to improve intent classification and response accuracy.',
+      'Developed data preprocessing and model evaluation pipelines using Python.',
     ],
   },
 ]
