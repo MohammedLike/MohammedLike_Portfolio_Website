@@ -1,106 +1,93 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import ParticleField from './ParticleField'
-import FloatingShapes from './FloatingShapes'
 
 export default function Hero() {
-  const sectionRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  })
-  const y = useTransform(scrollYProgress, [0, 1], [0, 150])
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92])
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120])
 
   return (
     <section
-      ref={sectionRef}
-      className="perspective-scene relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white px-6 pb-24 pt-20"
+      ref={ref}
+      className="relative flex min-h-screen flex-col justify-end overflow-hidden px-6 pb-16 pt-28 md:px-10 md:pb-24 lg:px-16"
     >
-      <div className="absolute inset-0 z-0">
-        <ParticleField />
-      </div>
-
-      <div className="grid-floor pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/2" aria-hidden />
-      <div className="bg-dot-grid pointer-events-none absolute inset-0 z-[1] opacity-20" aria-hidden />
-      <FloatingShapes />
-
-      <div className="pointer-events-none absolute left-8 top-24 z-[2] hidden h-24 w-[2px] bg-gradient-to-b from-blue-500/40 to-transparent md:block" />
-      <div className="pointer-events-none absolute right-8 top-24 z-[2] hidden h-24 w-[2px] bg-gradient-to-b from-blue-500/40 to-transparent md:block" />
-
-      <motion.div
-        style={{ y, opacity, scale }}
-        className="relative z-10 max-w-5xl text-center"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mb-10 flex items-center justify-center gap-4"
-        >
-          <div className="h-px w-10 bg-blue-500/40" />
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-gray-500">
-            Data Science · Quantitative Analysis · Financial Engineering
-          </p>
-          <div className="h-px w-10 bg-blue-500/40" />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="text-3d-hero mb-4"
-        >
-          <span className="text-3d-layer text-6xl font-black sm:text-7xl md:text-8xl lg:text-9xl">
-            <span className="text-3d-shadow" aria-hidden>Mohammed Like</span>
-            <span className="text-3d-main">Mohammed Like</span>
-          </span>
-          <span className="text-3d-layer mt-1 text-6xl font-black sm:text-7xl md:text-8xl lg:text-9xl">
-            <span className="text-3d-shadow" aria-hidden>Portfolio</span>
-            <span className="text-3d-accent holo-shimmer">Portfolio</span>
-          </span>
-        </motion.div>
-
+      <motion.div style={{ y }} className="relative z-10 mx-auto w-full max-w-[1400px]">
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
-          className="mx-auto max-w-lg text-base leading-relaxed text-gray-500 md:text-lg"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="editorial-label mb-8"
         >
-          ML Pipelines · Financial Risk Models · Full-Stack Analytics
+          Mohammed Like · Quant Researcher
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <a href="#projects" className="link-btn link-btn-primary px-8 py-3.5 text-sm">
-            View Projects
-            <span aria-hidden>→</span>
-          </a>
-          <a href="#contact" className="link-btn link-btn-secondary px-8 py-3.5 text-sm">
-            Get in Touch
-          </a>
-        </motion.div>
-      </motion.div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-8"
+          >
+            <h1 className="editorial-title text-[clamp(3rem,11vw,9rem)]">
+              Quantitative
+              <br />
+              Research
+              <span className="text-[var(--color-accent)]"> | </span>
+              Portfolio
+              <br />
+              <span className="font-serif font-normal normal-case italic text-[var(--color-sage)]">
+                2026
+              </span>
+            </h1>
+          </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 z-10 flex flex-col items-center gap-3"
-      >
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-400">
-          Scroll
-        </span>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-col justify-end lg:col-span-4"
+          >
+            <div className="hero-line mb-6 hidden lg:block" />
+            <p className="max-w-sm text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+              Building systematic trading systems, financial risk models, and
+              full-stack analytics platforms at the intersection of data science
+              and markets.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="#projects" className="btn-primary">
+                View Work <span aria-hidden>→</span>
+              </a>
+              <a href="#contact" className="btn-outline">
+                Contact
+              </a>
+            </div>
+          </motion.div>
+        </div>
+
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          className="h-8 w-px bg-gradient-to-b from-blue-400/60 to-transparent"
-        />
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="mt-16 flex items-center justify-between border-t border-[rgba(26,22,20,0.1)] pt-6"
+        >
+          <div className="flex gap-8 md:gap-16">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Focus</p>
+              <p className="mt-1 text-sm font-medium">Quant Finance</p>
+            </div>
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Based in</p>
+              <p className="mt-1 text-sm font-medium">India</p>
+            </div>
+            <div className="hidden sm:block">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Status</p>
+              <p className="mt-1 text-sm font-medium text-[var(--color-sage)]">Open to roles</p>
+            </div>
+          </div>
+          <p className="hidden font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)] md:block">
+            Scroll to explore
+          </p>
+        </motion.div>
       </motion.div>
     </section>
   )

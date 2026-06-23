@@ -1,177 +1,150 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { useTilt } from '../hooks/useTilt'
 
 const projects = [
   {
     title: 'RAG-LLM Backtesting Engine',
+    category: 'AI · Quant',
     description:
-      'Developed an AI-powered quantitative backtesting platform that converts natural language trading strategies into executable algorithmic workflows. Engineered a Retrieval-Augmented Generation (RAG) pipeline for strategy retrieval, parameter extraction, and financial knowledge parsing, backed by a vector database for semantic search.',
-    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Vector DB', 'LLMs', 'Backtesting'],
+      'AI-powered quantitative backtesting platform converting natural language trading strategies into executable algorithmic workflows with RAG pipeline and vector database semantic search.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Vector DB', 'LLMs'],
     highlights: [
-      'Converts discretionary/natural language trading rules into structured, executable code',
-      'RAG pipeline for strategy document retrieval, parameter extraction, and context-aware coding',
-      'Designed a scalable vector search architecture to support strategy automation and research'
+      'Natural language → executable trading code',
+      'RAG pipeline for strategy retrieval & parameter extraction',
+      'Scalable vector search for strategy automation',
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/RAG_LLM_Backtesting-Engine',
   },
   {
     title: 'Research Report Automation System',
+    category: 'NLP · Finance',
     description:
-      'Built an end-to-end investment research automation platform that generates institutional-grade financial reports from multi-source structured and unstructured market data. Integrates news analysis, data ingestion pipelines, and PDF report generation workflows to automate investment research.',
-    tech: ['Python', 'FastAPI', 'PostgreSQL', 'NLP', 'ReportLab', 'ETL Pipelines'],
+      'End-to-end investment research automation generating institutional-grade financial reports from multi-source structured and unstructured market data.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'NLP', 'ReportLab'],
     highlights: [
-      'Automated ingestion of market indices, news streams, and corporate filings into a PostgreSQL warehouse',
-      'NLP pipeline extracting sentiment scores, macro indicators, and corporate news insights',
-      'Generates stylized PDF reports with automated charts, statistics, and narrative synthesis'
+      'Automated market data ingestion into PostgreSQL',
+      'NLP sentiment & macro indicator extraction',
+      'PDF reports with charts and narrative synthesis',
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Research-Report-Automation',
   },
   {
     title: 'Black-Scholes Option Pricing Model',
+    category: 'Derivatives',
     description:
-      'Developed a production-grade option pricing and sensitivity system implementing the Black-Scholes framework for European options. Computes implied volatility surfaces and option Greeks (Delta, Gamma, Vega, Theta, Rho) with Monte Carlo pricing validation and interactive scenario analysis.',
-    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance', 'Quant Finance'],
+      'Production-grade European option pricing with implied volatility surfaces, full Greeks portfolio, and Monte Carlo validation with interactive scenario analysis.',
+    tech: ['Python', 'Streamlit', 'SciPy', 'yfinance'],
     highlights: [
-      'Computes full Greeks portfolio with real-time IV surface calibration via Newton-Raphson',
-      'Interactive Streamlit dashboard featuring 3D volatility surface charts and P&L simulations',
-      'Monte Carlo validation engine with 10,000+ simulated paths to verify pricing accuracy'
+      'IV surface calibration via Newton-Raphson',
+      '3D volatility surface charts & P&L simulations',
+      '10,000+ path Monte Carlo validation',
     ],
     liveUrl: 'https://black-scholes-option-pricing-model-9hkxyhodzn7nfbfcuhxckc.streamlit.app/',
     repo: 'https://github.com/MohammedLike/Black-Scholes-Option-Pricing-Model',
   },
   {
-    title: 'Time-Series Momentum Quantitative Platform',
+    title: 'Time-Series Momentum Platform',
+    category: 'Systematic Trading',
     description:
-      'Built a full-stack quantitative trading system using FastAPI and Next.js to analyze multi-asset portfolios on 20+ years of market data. Implemented a time-series momentum strategy with multi-horizon signal construction and regime detection via Hidden Markov Models (HMM). Engineered a high-performance backtesting engine with volatility targeting, transaction cost modeling, and risk metrics including Sharpe ratio, VaR, and maximum drawdown.',
+      'Full-stack quant trading system analyzing multi-asset portfolios on 20+ years of data with HMM regime detection and vol-targeted backtesting.',
     tech: ['FastAPI', 'Next.js', 'Python', 'HMM', 'Pandas'],
     highlights: [
-      'Multi-asset portfolio analysis on 20+ years of market data',
-      'Regime detection via Hidden Markov Models with multi-horizon signals',
-      'Advanced backtester with vol-targeting, transaction costs, and Sharpe optimization'
+      '20+ years multi-asset portfolio analysis',
+      'HMM regime detection with multi-horizon signals',
+      'Sharpe, VaR, max drawdown risk metrics',
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Time-Series-Momentum-TSMOM-strategy-system',
   },
   {
     title: 'Credit Risk Modeling Framework',
+    category: 'Risk · Basel III',
     description:
-      'Developed a Basel III IRB-compliant PD/LGD/EAD estimation pipeline on 50,000 synthetic loan records. Designed a WoE-based credit scorecard with PDO scaling (300–850 range); validated model stability via PSI monitoring and population drift analysis across 6 time windows. Stress-tested portfolio resilience under base, adverse, and severe macro scenarios using the Vasicek ASRF model. Generated automated PDF model-validation reports with ReportLab.',
-    tech: ['XGBoost', 'Statsmodels', 'ReportLab', 'Python', 'Risk Modeling'],
+      'Basel III IRB-compliant PD/LGD/EAD pipeline on 50K loan records with WoE scorecard, PSI monitoring, and Vasicek ASRF stress testing.',
+    tech: ['XGBoost', 'Statsmodels', 'ReportLab', 'Python'],
     highlights: [
-      'XGBoost PD model: ROC-AUC 0.91 · KS 0.63 · Gini 0.82',
-      'Credit scorecard (300–850) validated via PSI across 6 time windows',
-      'Stress-tested under base, adverse & severe scenarios via Vasicek ASRF'
+      'ROC-AUC 0.91 · KS 0.63 · Gini 0.82',
+      'Scorecard validated via PSI across 6 windows',
+      'Base, adverse & severe scenario stress tests',
     ],
     liveUrl: '',
     repo: 'https://github.com/MohammedLike/Credit-Risk-Modeling',
   },
   {
-    title: 'Market Decode — Indian Financial News Intelligence',
+    title: 'Market Decode — News Intelligence',
+    category: 'FinTech · NLP',
     description:
-      'Built a full-stack financial news intelligence platform that identifies the 3–5 stories genuinely driving Nifty and Sensex each trading day. Engineered a proprietary impact-scoring algorithm evaluating articles across 10+ dimensions — including keyword-based sentiment detection, sector relevance mapping, and institutional flow correlation — to cut through hundreds of daily headlines and surface only market-moving stories with automated "Why This Moves Markets" analysis.',
-    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance API', 'RSS'],
+      'Financial news intelligence platform surfacing 3–5 market-moving Nifty/Sensex stories daily via proprietary impact-scoring across 10+ dimensions.',
+    tech: ['Node.js', 'Express', 'JavaScript', 'Yahoo Finance'],
     highlights: [
-      'Proprietary impact-scoring engine filtering 100+ daily articles down to 3–5 high-signal stories',
-      'Real-time market dashboard with live Nifty 50, Sensex & Bank Nifty data, top gainers/losers, and market breadth'
+      '100+ articles filtered to 3–5 high-signal stories',
+      'Live Nifty 50, Sensex & Bank Nifty dashboard',
     ],
     liveUrl: 'https://indian-financial-news.vercel.app/',
     repo: 'https://github.com/MohammedLike/Indian-Financial-News-',
   },
 ]
 
-function ProjectCard({ project, index }) {
+function ProjectCase({ project, index }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-  const { ref: tiltRef, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 8, scale: 1.01 })
+  const inView = useInView(ref, { once: true, margin: '-40px' })
+  const num = String(index + 1).padStart(2, '0')
 
   return (
     <motion.article
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+      className="project-case group"
     >
-      <div
-        ref={tiltRef}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        className="project-card"
-        data-index={String(index + 1).padStart(2, '0')}
-      >
-      {/* Header */}
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <div className="flex items-center gap-3 mb-1">
-            <span className="font-mono text-xs font-semibold text-blue-600">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <h3 className="text-xl font-bold text-gray-900 md:text-2xl">
-              {project.title}
-            </h3>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-2">
+          <p className="project-number">{num}</p>
+        </div>
+
+        <div className="md:col-span-6">
+          <div className="project-accent-bar" />
+          <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-accent)]">
+            {project.category}
+          </p>
+          <h3 className="mt-2 font-display text-2xl font-bold uppercase tracking-tight md:text-3xl">
+            {project.title}
+          </h3>
+          <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-muted)]">
+            {project.description}
+          </p>
+          <ul className="mt-4 space-y-2">
+            {project.highlights.map((h, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-[var(--color-ink-soft)]">
+                <span className="mt-1.5 text-[var(--color-accent)]">—</span>
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-col justify-between md:col-span-4">
+          <div className="flex flex-wrap gap-2">
+            {project.tech.map((t, i) => (
+              <span key={i} className="tech-tag">{t}</span>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-6 md:mt-0">
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                Live Demo →
+              </a>
+            )}
+            {project.repo && (
+              <a href={project.repo} target="_blank" rel="noopener noreferrer" className="project-link">
+                GitHub →
+              </a>
+            )}
           </div>
         </div>
-      </div>
-
-      {/* Description */}
-      <p className="mt-4 text-[15px] leading-relaxed text-gray-600">
-        {project.description}
-      </p>
-
-      {/* Highlights */}
-      <div className="mt-4 space-y-1.5">
-        {project.highlights.map((item, i) => (
-          <div key={i} className="flex items-start gap-2">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
-            <p className="text-sm text-gray-500">{item}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Tech Stack */}
-      <div className="mt-5 flex flex-wrap gap-2">
-        {project.tech.map((t, i) => (
-          <span key={i} className="tech-badge">{t}</span>
-        ))}
-      </div>
-
-      {/* Links */}
-      <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-gray-100 pt-5">
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-btn link-btn-primary"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
-            Live Demo
-          </a>
-        )}
-        {project.repo && (
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-btn link-btn-secondary"
-          >
-            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-            GitHub
-          </a>
-        )}
-        {!project.liveUrl && !project.repo && (
-          <span className="text-sm text-gray-400 italic">
-            Links coming soon
-          </span>
-        )}
-      </div>
       </div>
     </motion.article>
   )
@@ -182,26 +155,27 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="projects" className="relative bg-white px-6 py-24 md:px-8 md:py-32" ref={ref}>
-      <div className="section-divider absolute inset-x-0 top-0" />
-
-      <div className="mx-auto max-w-[1200px]">
+    <section id="projects" className="bg-[rgba(255,255,255,0.25)] px-6 py-24 md:px-10 md:py-32 lg:px-16" ref={ref}>
+      <div className="mx-auto max-w-[1400px]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
-          className="mb-12 md:mb-16"
+          className="mb-16"
         >
-          <div className="section-label-bar mb-4" />
-          <h2 className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">Projects</h2>
-          <p className="mt-2 text-base text-gray-500">
-            Quantitative research and financial engineering work
+          <p className="editorial-label mb-6">Selected Work</p>
+          <h2 className="section-pipe-title">
+            Quant Projects<span className="pipe">|</span>2026
+          </h2>
+          <p className="mt-4 max-w-xl text-[var(--color-muted)]">
+            Quantitative research and financial engineering — from alpha research
+            to production-grade risk systems.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div>
           {projects.map((project, i) => (
-            <ProjectCard key={i} project={project} index={i} />
+            <ProjectCase key={i} project={project} index={i} />
           ))}
         </div>
       </div>
