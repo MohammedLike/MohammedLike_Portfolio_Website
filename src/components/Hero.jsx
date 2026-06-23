@@ -21,56 +21,54 @@ export default function Hero() {
           Mohammed Like · Quant Researcher
         </motion.p>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-8"
-          >
-            <h1 className="editorial-title text-[clamp(3rem,11vw,9rem)]">
-              Quantitative
-              <br />
-              Research
-              <span className="text-[var(--color-accent)]"> | </span>
-              Portfolio
-              <br />
-              <span className="font-serif font-normal normal-case italic text-[var(--color-sage)]">
-                2026
-              </span>
-            </h1>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h1 className="editorial-title max-w-[min(100%,18ch)] text-[clamp(2.75rem,9vw,7.5rem)]">
+            Quantitative
+            <br />
+            Research
+            <br />
+            <span className="whitespace-nowrap">
+              <span className="text-[var(--color-accent)]">|</span> Portfolio
+            </span>
+          </h1>
+          <p className="mt-4 font-serif text-[clamp(1.75rem,4vw,3rem)] italic text-[var(--color-sage)]">
+            2026
+          </p>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col justify-end lg:col-span-4"
-          >
-            <div className="hero-line mb-6 hidden lg:block" />
-            <p className="max-w-sm text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
-              Building systematic trading systems, financial risk models, and
-              full-stack analytics platforms at the intersection of data science
-              and markets.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#projects" className="btn-primary">
-                View Work <span aria-hidden>→</span>
-              </a>
-              <a href="#contact" className="btn-outline">
-                Contact
-              </a>
-            </div>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mt-10 max-w-xl md:mt-14 lg:mt-16"
+        >
+          <div className="hero-line mb-6" />
+          <p className="text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+            Building systematic trading systems, financial risk models, and
+            full-stack analytics platforms at the intersection of data science
+            and markets.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a href="#projects" className="btn-primary">
+              View Work <span aria-hidden>→</span>
+            </a>
+            <a href="#contact" className="btn-outline">
+              Contact
+            </a>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-16 flex items-center justify-between border-t border-[rgba(26,22,20,0.1)] pt-6"
+          className="mt-16 flex flex-col gap-6 border-t border-[rgba(26,22,20,0.1)] pt-6 sm:flex-row sm:items-center sm:justify-between"
         >
-          <div className="flex gap-8 md:gap-16">
+          <div className="flex flex-wrap gap-8 md:gap-16">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Focus</p>
               <p className="mt-1 text-sm font-medium">Quant Finance</p>
@@ -79,12 +77,12 @@ export default function Hero() {
               <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Based in</p>
               <p className="mt-1 text-sm font-medium">India</p>
             </div>
-            <div className="hidden sm:block">
+            <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">Status</p>
               <p className="mt-1 text-sm font-medium text-[var(--color-sage)]">Open to roles</p>
             </div>
           </div>
-          <p className="hidden font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)] md:block">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">
             Scroll to explore
           </p>
         </motion.div>

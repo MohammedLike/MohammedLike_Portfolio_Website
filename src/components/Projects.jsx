@@ -100,12 +100,11 @@ function ProjectCase({ project, index }) {
       transition={{ duration: 0.6, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
       className="project-case group"
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-8">
-        <div className="md:col-span-2">
-          <p className="project-number">{num}</p>
-        </div>
+      <p className="project-number project-number--desktop hidden md:block" aria-hidden>{num}</p>
+      <p className="project-number--mobile md:hidden" aria-hidden>{num}</p>
 
-        <div className="md:col-span-6">
+      <div className="project-case-body grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
+        <div className="md:col-span-7 lg:col-span-7">
           <div className="project-accent-bar" />
           <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--color-accent)]">
             {project.category}
@@ -126,13 +125,13 @@ function ProjectCase({ project, index }) {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-between md:col-span-4">
+        <div className="flex flex-col justify-between gap-6 md:col-span-5 lg:col-span-5">
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t, i) => (
               <span key={i} className="tech-tag">{t}</span>
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-6 md:mt-0">
+          <div className="mt-0 flex flex-wrap gap-6">
             {project.liveUrl && (
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
                 Live Demo →

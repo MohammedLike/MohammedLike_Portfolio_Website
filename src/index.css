@@ -59,7 +59,7 @@ body {
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 0.92;
+  line-height: 1.05;
   text-transform: uppercase;
 }
 
@@ -192,6 +192,7 @@ body {
   border-top: 1px solid rgba(26, 22, 20, 0.12);
   padding: 3rem 0;
   transition: background 0.4s ease;
+  overflow: hidden;
 }
 .project-case:hover {
   background: rgba(255, 255, 255, 0.35);
@@ -202,11 +203,38 @@ body {
 .project-number {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px rgba(26, 22, 20, 0.12);
   transition: -webkit-text-stroke-color 0.4s ease;
+  pointer-events: none;
+  user-select: none;
+}
+.project-number--mobile {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(26, 22, 20, 0.15);
+  margin-bottom: 0.5rem;
+}
+.project-number--desktop {
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  width: clamp(4.5rem, 11vw, 7rem);
+  z-index: 0;
+}
+.project-case-body {
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .project-case-body {
+    padding-left: clamp(5.5rem, 13vw, 9rem);
+  }
 }
 .project-case:hover .project-number {
   -webkit-text-stroke-color: var(--color-accent);
