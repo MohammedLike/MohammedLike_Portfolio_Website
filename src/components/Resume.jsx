@@ -1,5 +1,17 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTilt } from '../hooks/useTilt'
+
+function ResumeStat({ value, label, sub }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 8, scale: 1.02 })
+  return (
+    <div ref={ref} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} className="stat-card">
+      <p className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">{value}</p>
+      <p className="mt-2 text-sm text-gray-600">{label}</p>
+      {sub && <p className="mt-1 font-mono text-xs text-gray-400">{sub}</p>}
+    </div>
+  )
+}
 
 export default function Resume() {
   const ref = useRef(null)
@@ -21,7 +33,7 @@ export default function Resume() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-400">
               Resume
             </p>
-            <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl">
+            <h2 className="heading-display text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl">
               A detailed account of my professional journey.
             </h2>
           </div>
@@ -48,27 +60,9 @@ export default function Resume() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-14 grid grid-cols-1 gap-6 border-t border-gray-200 pt-14 md:grid-cols-3"
         >
-          <div className="stat-card">
-            <p className="text-3xl font-bold text-gray-900 md:text-4xl">B.Tech</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Computer Science & Engineering (Data Science)
-            </p>
-            <p className="mt-1 font-mono text-xs text-gray-400">
-              JIET, 2022 — 2026
-            </p>
-          </div>
-          <div className="stat-card">
-            <p className="text-3xl font-bold text-gray-900 md:text-4xl">5</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Quantitative Projects Delivered
-            </p>
-          </div>
-          <div className="stat-card">
-            <p className="text-3xl font-bold text-gray-900 md:text-4xl">3</p>
-            <p className="mt-2 text-sm text-gray-600">
-              Industry Internships
-            </p>
-          </div>
+          <ResumeStat value="B.Tech" label="Computer Science & Engineering (Data Science)" sub="JIET, 2022 — 2026" />
+          <ResumeStat value="5" label="Quantitative Projects Delivered" />
+          <ResumeStat value="3" label="Industry Internships" />
         </motion.div>
       </div>
     </section>

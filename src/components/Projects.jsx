@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTilt } from '../hooks/useTilt'
 
 const projects = [
   {
@@ -84,6 +85,7 @@ const projects = [
 function ProjectCard({ project, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const { ref: tiltRef, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 8, scale: 1.01 })
 
   return (
     <motion.article
@@ -91,8 +93,14 @@ function ProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="project-card"
     >
+      <div
+        ref={tiltRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        className="project-card"
+        data-index={String(index + 1).padStart(2, '0')}
+      >
       {/* Header */}
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
@@ -164,6 +172,7 @@ function ProjectCard({ project, index }) {
           </span>
         )}
       </div>
+      </div>
     </motion.article>
   )
 }
@@ -184,7 +193,7 @@ export default function Projects() {
           className="mb-12 md:mb-16"
         >
           <div className="section-label-bar mb-4" />
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Projects</h2>
+          <h2 className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">Projects</h2>
           <p className="mt-2 text-base text-gray-500">
             Quantitative research and financial engineering work
           </p>

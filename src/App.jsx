@@ -9,6 +9,9 @@ import Skills from './components/Skills'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import CustomCursor from './components/CustomCursor'
+import ScrollProgress from './components/ScrollProgress'
+import GradientMesh from './components/GradientMesh'
 
 function App() {
   useEffect(() => {
@@ -16,7 +19,10 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white text-black antialiased">
+    <div className="relative min-h-screen bg-white text-black antialiased">
+      <GradientMesh />
+      <CustomCursor />
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <TickerTape />

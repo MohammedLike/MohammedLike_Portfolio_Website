@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", "Helvetica Neue", -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
   --color-accent: #2563eb;
   --color-accent-light: #3b82f6;
@@ -120,20 +121,6 @@ body {
   border-radius: 2px;
 }
 
-/* ─── Project card styles ─── */
-.project-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  background: #ffffff;
-  padding: 32px;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.project-card:hover {
-  border-color: #d1d5db;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-}
-
 /* ─── Tech badge ─── */
 .tech-badge {
   display: inline-flex;
@@ -186,35 +173,6 @@ body {
   background: var(--color-accent-subtle);
 }
 
-/* ─── Stat card ─── */
-.stat-card {
-  text-align: center;
-  padding: 24px 16px;
-  border-radius: 12px;
-  background: #f9fafb;
-  border: 1px solid #f3f4f6;
-  transition: all 0.3s ease;
-}
-.stat-card:hover {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-}
-
-/* ─── Skill card ─── */
-.skill-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 32px;
-  background: #ffffff;
-  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.skill-card:hover {
-  border-color: var(--color-accent-subtle);
-  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
-  transform: translateY(-2px);
-}
-
 /* ─── Input focus ─── */
 .form-input {
   width: 100%;
@@ -233,4 +191,409 @@ body {
 .form-input:focus {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ─── Futuristic 3D layer ─── */
+.perspective-scene {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* ─── Gradient mesh background ─── */
+.gradient-mesh {
+  overflow: hidden;
+}
+.gradient-mesh-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: mesh-drift 20s ease-in-out infinite;
+}
+.gradient-mesh-blob-1 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+}
+.gradient-mesh-blob-2 {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  bottom: 20%;
+  left: -15%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  animation-delay: -7s;
+}
+.gradient-mesh-blob-3 {
+  width: 30vw;
+  height: 30vw;
+  max-width: 400px;
+  max-height: 400px;
+  top: 50%;
+  left: 40%;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.1) 0%, transparent 70%);
+  animation-delay: -14s;
+}
+@keyframes mesh-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+/* ─── 3D floating shapes ─── */
+.shape-3d {
+  transform-style: preserve-3d;
+}
+.shape-sphere {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(37,99,235,0.4) 50%, rgba(37,99,235,0.15) 100%);
+  box-shadow:
+    inset -8px -8px 20px rgba(37,99,235,0.3),
+    inset 4px 4px 12px rgba(255,255,255,0.8),
+    0 20px 40px rgba(37,99,235,0.15);
+}
+.shape-ring {
+  border-radius: 50%;
+  border: 3px solid rgba(37,99,235,0.25);
+  box-shadow:
+    0 0 20px rgba(37,99,235,0.1),
+    inset 0 0 20px rgba(37,99,235,0.05);
+  background: transparent;
+  transform: rotateX(65deg);
+}
+.shape-cube {
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(219,234,254,0.6) 50%, rgba(37,99,235,0.2) 100%);
+  box-shadow:
+    0 15px 35px rgba(37,99,235,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  transform: rotateX(20deg) rotateY(-25deg);
+}
+
+/* ─── 3D text hero ─── */
+.text-3d-hero {
+  font-family: var(--font-display);
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+.text-3d-layer {
+  display: block;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.text-3d-shadow {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(37, 99, 235, 0.12);
+  transform: translateZ(-30px) translateY(4px);
+  pointer-events: none;
+  user-select: none;
+}
+.text-3d-main {
+  background: linear-gradient(180deg, #111827 0%, #374151 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateZ(20px);
+}
+.text-3d-accent {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 40%, #60a5fa 70%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateZ(30px);
+  filter: drop-shadow(0 0 30px rgba(37, 99, 235, 0.25));
+}
+
+/* ─── Holographic shimmer ─── */
+.holo-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.holo-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.4) 45%,
+    rgba(147,197,253,0.3) 50%,
+    rgba(255,255,255,0.4) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  animation: holo-sweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes holo-sweep {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+/* ─── Glass card 3D ─── */
+.glass-card-3d {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.02) inset;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.glass-card-3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+.glass-card-3d:hover {
+  box-shadow:
+    0 20px 60px rgba(37, 99, 235, 0.1),
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+/* ─── Project card 3D upgrade ─── */
+.project-card {
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 32px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.2), transparent);
+}
+.project-card::after {
+  content: attr(data-index);
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(37, 99, 235, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+.project-card:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow:
+    0 24px 60px rgba(37, 99, 235, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Stat card 3D ─── */
+.stat-card {
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37,99,235,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08);
+}
+
+/* ─── Skill card 3D ─── */
+.skill-card {
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 20px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+}
+.skill-card:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 16px 48px rgba(37, 99, 235, 0.1);
+}
+
+/* ─── Navbar glass ─── */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Scroll progress ─── */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa, #2563eb);
+  z-index: 100;
+  transform-origin: 0%;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+}
+.scroll-progress-label {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(107, 114, 128, 0.5);
+  pointer-events: none;
+}
+
+/* ─── Custom cursor ─── */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #2563eb;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(37, 99, 235, 0.4);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, border-color 0.3s ease;
+}
+.cursor-ring.cursor-hover {
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-color: rgba(37, 99, 235, 0.7);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+/* ─── Section heading display font ─── */
+.heading-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* ─── Ticker holographic ─── */
+.ticker-holo {
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+  border-color: rgba(37, 99, 235, 0.08);
+  position: relative;
+}
+.ticker-holo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.03), transparent);
+  pointer-events: none;
+}
+
+/* ─── Contact glow ─── */
+.contact-glow {
+  position: relative;
+  overflow: hidden;
+}
+.contact-glow::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(37,99,235,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ─── Experience timeline 3D ─── */
+.exp-timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(37,99,235,0.4), rgba(37,99,235,0.05));
+  transform: translateX(-1px);
+}
+.exp-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+  flex-shrink: 0;
+}
+
+/* ─── Grid floor (hero) ─── */
+.grid-floor {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, black 20%, transparent 70%);
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center bottom;
+  opacity: 0.5;
 }

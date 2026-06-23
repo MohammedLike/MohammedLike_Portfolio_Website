@@ -33,7 +33,7 @@ export default function TickerTape() {
   const doubled = [...tickers, ...tickers]
 
   return (
-    <div className="hover-pause relative overflow-hidden border-y border-gray-200 bg-gray-50 py-2.5">
+    <div className="ticker-holo hover-pause relative overflow-hidden border-y py-2.5">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-gray-50 to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-gray-50 to-transparent" />
       <div className="ticker-scroll flex w-max">

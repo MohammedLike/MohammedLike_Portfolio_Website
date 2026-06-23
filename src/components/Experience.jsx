@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTilt } from '../hooks/useTilt'
 
 const experiences = [
   {
@@ -39,6 +40,7 @@ const experiences = [
 function ExperienceCard({ exp, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const { ref: tiltRef, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 4, scale: 1.005 })
 
   return (
     <motion.div
@@ -46,9 +48,17 @@ function ExperienceCard({ exp, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      className="group grid grid-cols-1 gap-6 border-t border-gray-200 py-10 md:grid-cols-12 md:gap-16 md:py-14"
+      className="group relative"
     >
-      <div className="md:col-span-4">
+      <div
+        ref={tiltRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        className="grid grid-cols-1 gap-6 border-t border-gray-200 py-10 md:grid-cols-12 md:gap-16 md:py-14"
+      >
+        <div className="flex gap-4 md:col-span-4">
+          <div className="exp-dot mt-2 hidden md:block" />
+          <div>
         <p className="font-mono text-xs font-medium uppercase tracking-widest text-blue-600">
           {exp.period}
         </p>
@@ -56,7 +66,8 @@ function ExperienceCard({ exp, index }) {
           {exp.role}
         </h3>
         <p className="mt-1 text-sm font-medium text-gray-500">{exp.company}</p>
-      </div>
+          </div>
+        </div>
 
       <div className="space-y-4 md:col-span-8">
         {exp.details.map((detail, i) => (
@@ -68,6 +79,7 @@ function ExperienceCard({ exp, index }) {
           </div>
         ))}
       </div>
+      </div>
     </motion.div>
   )
 }
@@ -78,7 +90,8 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative bg-gray-50 px-6 py-24 md:px-8 md:py-32" ref={ref}>
-      <div className="relative mx-auto max-w-[1200px]">
+      <div className="relative mx-auto max-w-[1200px] md:pl-6">
+        <div className="exp-timeline-line hidden md:block" aria-hidden />
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
@@ -86,7 +99,7 @@ export default function Experience() {
           className="mb-12 md:mb-16"
         >
           <div className="section-label-bar mb-4" />
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Experience</h2>
+          <h2 className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">Experience</h2>
           <p className="mt-2 text-base text-gray-500">
             Professional work and internship experience
           </p>

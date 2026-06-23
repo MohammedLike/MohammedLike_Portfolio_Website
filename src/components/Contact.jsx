@@ -74,7 +74,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-gray-900 px-6 py-24 md:px-8 md:py-32"
+      className="contact-glow relative bg-gray-900 px-6 py-24 md:px-8 md:py-32"
       ref={ref}
     >
       <div className="mx-auto max-w-[1200px]">
@@ -88,7 +88,7 @@ export default function Contact() {
             Contact
           </p>
 
-          <h2 className="max-w-2xl text-3xl font-bold leading-snug tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="heading-display max-w-2xl text-3xl font-bold leading-snug tracking-tight text-white sm:text-4xl md:text-5xl">
             Let&rsquo;s discuss your next{' '}
             <span className="text-blue-400">opportunity.</span>
           </h2>

@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { useTilt } from '../hooks/useTilt'
 
 const skillTabs = [
   {
@@ -161,6 +162,38 @@ const skillTabs = [
   },
 ]
 
+function SkillCard({ cat }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 6, scale: 1.02 })
+  return (
+    <div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className="skill-card flex flex-col justify-between"
+    >
+      <div>
+        <div className="mb-6 flex items-center gap-3">
+          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 font-mono text-sm font-bold text-blue-600 shadow-[0_4px_12px_rgba(37,99,235,0.1)]">
+            {cat.icon}
+          </span>
+          <h3 className="text-lg font-bold text-gray-900">{cat.title}</h3>
+        </div>
+        <ul className="space-y-2.5">
+          {cat.skills.map((skill, si) => (
+            <li
+              key={si}
+              className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600 transition-colors duration-300 hover:text-gray-900"
+            >
+              <span className="mt-[7px] block h-1 w-3 shrink-0 rounded-full bg-gray-300" />
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('quant-trading')
   const ref = useRef(null)
@@ -180,7 +213,7 @@ export default function Skills() {
           className="mb-12 text-center md:mb-16"
         >
           <div className="section-label-bar mb-4 mx-auto" />
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Expertise</h2>
+          <h2 className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">Expertise</h2>
           <p className="mt-2 text-base text-gray-500">
             Core competencies and technical proficiencies
           </p>
@@ -216,28 +249,7 @@ export default function Skills() {
           } md:gap-8`}
         >
           {currentTab.categories.map((cat, ci) => (
-            <div key={ci} className="skill-card flex flex-col justify-between">
-              <div>
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 font-mono text-sm font-bold text-blue-600">
-                    {cat.icon}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900">{cat.title}</h3>
-                </div>
-
-                <ul className="space-y-2.5">
-                  {cat.skills.map((skill, si) => (
-                    <li
-                      key={si}
-                      className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600 transition-colors duration-300 hover:text-gray-900"
-                    >
-                      <span className="mt-[7px] block h-1 w-3 shrink-0 rounded-full bg-gray-300" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <SkillCard key={ci} cat={cat} />
           ))}
         </motion.div>
       </div>

@@ -48,8 +48,8 @@ This portfolio is a single-page application (SPA) designed to serve as a profess
 | **Ticker Tape** | Auto-scrolling financial market ticker with real-time-style data |
 | **About** | Professional summary with key stats (projects, internships, education) |
 | **Experience** | Timeline of professional internships with detailed bullet points |
-| **Projects** | Card-based showcase of 3 quantitative finance projects with links |
-| **Skills** | 4-category grid covering Quant Methods, Programming, Finance & Risk, Soft Skills |
+| **Projects** | Card-based showcase of 6 quantitative finance projects with links |
+| **Skills** | Tabbed interface grouping 10 skill categories into 4 interactive tabs |
 | **Resume** | Education stats with a direct PDF download link |
 | **Contact** | Contact form (mailto-based) plus Email, Phone, LinkedIn, and GitHub links |
 | **Footer** | Minimal branding footer |
@@ -231,10 +231,13 @@ An infinite-scrolling ticker tape displaying market indices (NIFTY, SENSEX, BANK
 - Edge gradient masks for smooth visual blending
 
 ### `Projects.jsx` — Project Cards
-Three project cards rendered from a static data array:
-1. **Black-Scholes Options Pricing Engine** — Live demo + GitHub
-2. **Time-Series Momentum Quantitative Platform** — FastAPI/Next.js/HMM
-3. **Credit Risk Modeling Framework** — Basel III IRB-compliant pipeline
+Six project cards rendered from a static data array:
+1. **RAG-LLM Backtesting Engine** — Converts natural language strategies into backtest workflows
+2. **Research Report Automation System** — Ingests market data to auto-generate PDF reports
+3. **Black-Scholes Option Pricing Model** — European option pricing with implied volatility surfaces and Greeks
+4. **Time-Series Momentum Quantitative Platform** — FastAPI/Next.js/HMM portfolio backtester
+5. **Credit Risk Modeling Framework** — Basel III IRB-compliant risk estimation pipeline
+6. **Market Decode — Indian Financial News Intelligence** — Financial news intelligence and impact scoring platform
 
 Each card displays: numbered index, title, description, highlight bullets, tech badges, and action links.
 
@@ -346,7 +349,7 @@ All content is stored as **static data arrays** at the top of each component fil
 |----------------|------|---------------|
 | Work Experience | `src/components/Experience.jsx` | `experiences[]` |
 | Projects | `src/components/Projects.jsx` | `projects[]` |
-| Skills | `src/components/Skills.jsx` | `skillCategories[]` |
+| Skills | `src/components/Skills.jsx` | `skillTabs[]` |
 | Contact Links | `src/components/Contact.jsx` | `links[]` |
 | Ticker Data | `src/components/TickerTape.jsx` | `tickers[]` |
 | Nav Links | `src/components/Navbar.jsx` | `navLinks[]` |

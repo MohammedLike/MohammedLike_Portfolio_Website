@@ -32,9 +32,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'border-b border-gray-200 bg-white/95 backdrop-blur-xl shadow-sm'
-            : 'bg-transparent'
+          scrolled ? 'nav-glass' : 'bg-transparent'
         }`}
       >
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:h-[72px] lg:px-8">
@@ -43,7 +41,7 @@ export default function Navbar() {
             href="#"
             className="group flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-900 transition-colors group-hover:bg-blue-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-900 shadow-[0_4px_16px_rgba(37,99,235,0.2)] transition-all duration-300 group-hover:bg-blue-600 group-hover:shadow-[0_4px_20px_rgba(37,99,235,0.4)]">
               <span className="text-sm font-bold tracking-wider text-white">ML</span>
             </div>
             <span className="hidden text-sm font-semibold tracking-wide text-gray-900 sm:block">

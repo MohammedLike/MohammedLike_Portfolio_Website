@@ -1,5 +1,17 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTilt } from '../hooks/useTilt'
+
+function StatCard({ value, label, sub }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt({ maxTilt: 10, scale: 1.03 })
+  return (
+    <div ref={ref} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave} className="stat-card">
+      <p className="heading-display text-3xl font-bold text-gray-900 md:text-4xl">{value}</p>
+      <p className="mt-1 text-sm text-gray-500">{label}</p>
+      {sub && <p className="mt-0.5 font-mono text-xs text-gray-400">{sub}</p>}
+    </div>
+  )
+}
 
 export default function About() {
   const ref = useRef(null)
@@ -26,7 +38,7 @@ export default function About() {
 
           {/* Content */}
           <div className="md:col-span-9">
-            <h2 className="text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            <h2 className="heading-display text-3xl font-bold leading-snug tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
               Quantitative Researcher and Developer building systematic trading systems.
             </h2>
 
@@ -41,18 +53,9 @@ export default function About() {
 
             {/* Quick stats */}
             <div className="mt-12 grid grid-cols-3 gap-6">
-              <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">5</p>
-                <p className="mt-1 text-sm text-gray-500">Quant Projects</p>
-              </div>
-              <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">3</p>
-                <p className="mt-1 text-sm text-gray-500">Internships</p>
-              </div>
-              <div className="stat-card">
-                <p className="text-3xl font-bold text-gray-900 md:text-4xl">B.Tech</p>
-                <p className="mt-1 text-sm text-gray-500">CS & DS, 2022–26</p>
-              </div>
+              <StatCard value="5" label="Quant Projects" />
+              <StatCard value="3" label="Internships" />
+              <StatCard value="B.Tech" label="CS & DS, 2022–26" />
             </div>
           </div>
         </motion.div>
