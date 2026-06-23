@@ -16,57 +16,59 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="editorial-label mb-8"
+          className="editorial-label mb-8 md:mb-10"
         >
           Mohammed Like · Quant Researcher
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h1 className="editorial-title max-w-[min(100%,18ch)] text-[clamp(2.75rem,9vw,7.5rem)]">
-            Quantitative
-            <br />
-            Research
-            <br />
-            <span className="whitespace-nowrap">
-              <span className="text-[var(--color-accent)]">|</span> Portfolio
-            </span>
-          </h1>
-          <p className="mt-4 font-serif text-[clamp(1.75rem,4vw,3rem)] italic text-[var(--color-sage)]">
-            2026
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-x-12 xl:gap-x-20">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="hero-title-block lg:col-span-7 xl:col-span-8"
+          >
+            <h1 className="editorial-title text-[clamp(2.75rem,9vw,7.5rem)]">
+              Quantitative
+              <br />
+              Research
+              <br />
+              <span className="text-[var(--color-accent)]"> | </span>
+              Portfolio
+            </h1>
+            <p className="mt-5 font-serif text-[clamp(1.75rem,4vw,3rem)] italic leading-none text-[var(--color-sage)] md:mt-6">
+              2026
+            </p>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-10 max-w-xl md:mt-14 lg:mt-16"
-        >
-          <div className="hero-line mb-6" />
-          <p className="text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
-            Building systematic trading systems, financial risk models, and
-            full-stack analytics platforms at the intersection of data science
-            and markets.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#projects" className="btn-primary">
-              View Work <span aria-hidden>→</span>
-            </a>
-            <a href="#contact" className="btn-outline">
-              Contact
-            </a>
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="hero-side lg:col-span-5 xl:col-span-4"
+          >
+            <div className="hero-line mb-6 hidden lg:block" />
+            <p className="text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
+              Building systematic trading systems, financial risk models, and
+              full-stack analytics platforms at the intersection of data science
+              and markets.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="#projects" className="btn-primary">
+                View Work <span aria-hidden>→</span>
+              </a>
+              <a href="#contact" className="btn-outline">
+                Contact
+              </a>
+            </div>
+          </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-16 flex flex-col gap-6 border-t border-[rgba(26,22,20,0.1)] pt-6 sm:flex-row sm:items-center sm:justify-between"
+          className="mt-16 flex flex-col gap-6 border-t border-[rgba(26,22,20,0.1)] pt-6 sm:mt-20 sm:flex-row sm:items-center sm:justify-between md:mt-24"
         >
           <div className="flex flex-wrap gap-8 md:gap-16">
             <div>

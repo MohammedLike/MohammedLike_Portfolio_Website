@@ -59,8 +59,28 @@ body {
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.12;
   text-transform: uppercase;
+}
+
+.hero-title-block {
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-title-block {
+    max-width: 11.5ch;
+  }
+}
+
+.hero-side {
+  max-width: 22rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-side {
+    padding-top: clamp(7rem, 16vw, 13rem);
+  }
 }
 
 .editorial-label {
