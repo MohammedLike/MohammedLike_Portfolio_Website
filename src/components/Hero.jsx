@@ -26,15 +26,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="hero-title-block lg:col-span-7 xl:col-span-8"
+            className="hero-title-block lg:col-span-7"
           >
-            <h1 className="editorial-title text-[clamp(2.75rem,9vw,7.5rem)]">
-              Quantitative
-              <br />
-              Research
-              <br />
-              <span className="text-[var(--color-accent)]"> | </span>
-              Portfolio
+            <h1 className="editorial-title text-[clamp(2.75rem,8.5vw,6.75rem)]">
+              <span className="hero-title-line">Quantitative</span>
+              <span className="hero-title-line">Research</span>
+              <span className="hero-title-line hero-title-line--portfolio">
+                <span className="text-[var(--color-accent)]"> | </span>
+                Portfolio
+              </span>
             </h1>
             <p className="mt-5 font-serif text-[clamp(1.75rem,4vw,3rem)] italic leading-none text-[var(--color-sage)] md:mt-6">
               2026
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="hero-side lg:col-span-5 xl:col-span-4"
+            className="hero-side lg:col-span-5 lg:col-start-8"
           >
             <div className="hero-line mb-6 hidden lg:block" />
             <p className="text-base leading-relaxed text-[var(--color-muted)] md:text-lg">
